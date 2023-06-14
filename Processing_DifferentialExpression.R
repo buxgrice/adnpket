@@ -40,15 +40,6 @@ setwd ("/Users/arielabuxbaumgrice/Desktop/projects_new/ADNP_ketamine")
 getwd()
 
 #||----------------------------------------------------------------------------||-----------
-#||     SET UP PARAMETERS AND CALLS TO STREAMLINE GRAPHING, TABLES, ANALYSES   ||
-#||----------------------------------------------------------------------------||-----------
-
-input.dir = "/Users/arielabuxbaumgrice/Desktop/projects_new/ADNP_ketamine/input.files/"
-output.dir = "/Users/arielabuxbaumgrice/Desktop/projects_new/ADNP_ketamine/outputs/"
-
-options(stringsAsFactors = FALSE)
-
-#||----------------------------------------------------------------------------||-----------
 #||----------------------------------------------------------------------------||-----------
 #||                                ||LOAD DATA||                               ||
 #||----------------------------------------------------------------------------||-----------
@@ -64,7 +55,7 @@ meta = read.csv("Final_MetadataCombined.csv", row.names = 1) # a complete file w
 #|| Raw Counts                                            ||
 #||-------------------------------------------------------||-----
 
-raw = read.delim(paste0(input.dir,"ADNP_counts.txt"))
+raw = read.delim(paste0("ADNP_counts.txt"))
 
 #||----------------------------------------------------------------------------||-----------
 #||----------------------------------------------------------------------------||-----------
@@ -263,5 +254,6 @@ allDEGs = rbind(sigGenes1, sigGenes2, sigGenes4, sigGenes5) # No genes from T3 (
 
 # If you want to save your full list of differentially expressed genes by timepoint
 # > write.table(allDEGs, "EnsIDs_allDEGS_TimeComparisons.txt", sep="\t")
+
 
 
